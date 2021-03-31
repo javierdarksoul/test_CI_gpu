@@ -9,10 +9,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          codeblock= "|||"
-          echo $codeblock > report.md
-          nvidia-smi >> report.md
-          echo $codeblock >>report.md
+          nvidia-smi > report.md
           ls >> report.md
           cml-send-comment report.md
           
